@@ -1,0 +1,21 @@
+# MongoDB Configuration
+mongo:
+  uri: "mongodb://localhost:27017"
+  database: "BungeeAuth"
+
+# Redis Configuration
+redis:
+  host: "localhost"
+  port: 6379
+  password: ""
+
+# General plugin settings
+settings:
+  name-regex: "^[a-zA-Z0-9_]*"
+  min-password-length: 3
+  max-password-length: 12
+  captcha-enabled: true
+  captcha-length: 6
+  pin-code-enabled: true
+  pin-code-length: 4
+  discord-webhook-url: "https://discord.com/api/webhooks/XXXXXXXX/XXXXXXXXXXXX"

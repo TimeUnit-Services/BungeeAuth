@@ -1,0 +1,58 @@
+plugins {
+    id "org.jetbrains.kotlin.kapt" version "$kotlin_version"
+    id "org.jetbrains.kotlin.jvm" version "$kotlin_version"
+    id "com.github.johnrengelman.shadow" version "$shadow_version"
+}
+
+group = 'dev.timeunit.auth'
+version = '1.0-SNAPSHOT'
+description = 'Authentication plugin for Waterfall proxy using MongoDB'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+}
+
+apply plugin: 'maven-publish'
+
+dependencies {
+    compileOnly 'io.github.waterfallmc:waterfall-api:1.21-R0.3-SNAPSHOT'
+    compileOnly 'com.mojang:authlib:1.5.25'
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "redis.clients:jedis:$redis_version"
+    implementation "org.mongodb:mongo-java-driver:$mongo_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+    implementation "org.mindrot:jbcrypt:0.4"
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+    kotlinOptions.jvmTarget = '1.8'
+}
+
+sourceSets.main.java.srcDirs += 'src/main/kotlin/'
+
+tasks.shadowJar {
+    archiveFileName = "${project.name}-${project.version}.jar"
+    classifier = null
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact(tasks.shadowJar) {
+                builtBy tasks.shadowJar
+            }
+        }
+    }
+}

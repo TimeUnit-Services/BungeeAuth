@@ -1,0 +1,41 @@
+name: BungeeAuth
+main: dev.timeunit.auth.BungeeAuth
+version: 1.0-SNAPSHOT
+author: TimeUnit
+
+commands:
+  register:
+    description: Register a new account
+    usage: /register [pass] [pass] & /register force [player] [pass]
+  login:
+    description: Log in to your account
+    usage: /login [pass] & /login force [player]
+  changepw:
+    description: Change your password
+    usage: /changepw [old pass] [new pass]
+  reset:
+    description: Resets a player's account
+    usage: /reset [player]
+  logout:
+    description: Log out of your account
+    usage: /logout
+  premium:
+    description: Mark your account as premium
+    usage: /premium
+  resetpassword:
+    description: Reset your password using a PIN code
+    usage: /resetpassword [pin] [new pass]
+  generatepin:
+    description: Generate a PIN code for password recovery
+    usage: /generatepin
+  forcelogin:
+    description: Force a player to log in
+    usage: /forcelogin [player]
+  authdebug:
+    description: Debug authentication issues for a player
+    usage: /authdebug [player]
+
+permissions:
+  bungeeauth.admin:
+    description: Allows the use of administrative commands
+    default: op

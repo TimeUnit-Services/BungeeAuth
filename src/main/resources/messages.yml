@@ -1,0 +1,76 @@
+# Title configurations
+titles:
+  enabled: true
+  fade-in: 20
+  fade-out: 20
+  stay: 200
+  register:
+    top: '&aPLEASE REGISTER'
+    bottom: '&eYour captcha is: &c%captcha%'
+  login:
+    top: '&aPLEASE LOGIN'
+    bottom: '&eUse /login pass'
+  auto:
+    top: '&aAuto-Logged'
+    bottom: '&eThanks for playing with us!'
+  success:
+    top: '&aThanks for Playing with us'
+    bottom: '&eEnjoy the server!'
+
+# Customizable messages
+messages:
+  login: "&cPlease log in using /login [password]."
+  register: "&cPlease register using /register [password] [password] &a%captcha%&c."
+  player-only: "&cThis command can only be executed by a player."
+  no-permission: "&cYou don't have permission to execute this command."
+  not-registered: "&cYou are not registered. Use /register to create an account."
+  premium-user: "&cYou are a premium account."
+  no-premium-user: "&cYou are not premium account."
+  already-registered: "&aYou are already registered."
+  registration-success: "&aYou have successfully registered."
+  passwords-not-match: "&cPasswords do not match."
+  login-success: "&aYou have successfully logged in."
+  login-success-premium: "&aYou have been automatically logged in as a premium user."
+  already-logged-in: "&cYou are already logged in."
+  incorrect-password: "&cIncorrect password, You last changed it on: %last_changed%."
+  not-logged-in: "&cYou are not logged in."
+  logout-success: "&aYou have successfully logged out."
+  logout-disconnect: "&aYou have logged out!"
+  password-changed: "&aYour password has been changed successfully."
+  player-not-found: "&cPlayer not found."
+  reset-success: "&aThe %player% account has been reset."
+  reset-disconnect: "&cYour account has been reset."
+  premium-success: "&aYour account has been marked as premium."
+  force-register-success: "&eYou have forcibly registered the player %player%."
+  force-login-success: "&eYou are forcibly logged in to the player %player%."
+  register-usage: "&cUsage: /register [password] [password]."
+  register-captcha-needed: "&cUsage: /register [password] [password] &a%captcha%&c."
+  login-usage: "&cUsage: /login [password]."
+  changepw-usage: "&cUsage: /changepw [old password] [new password]."
+  reset-usage: "&cUsage: /reset [player]."
+  force-login-usage: "&cUsage: /forcelogin [player]."
+  register-timeout: "&cYou have reached the end of your registration time. Please log in again and try to register faster."
+  login-timeout: "&cYou have timed out. Please reconnect and try to log in faster."
+  no-login-needed: "&aYou are already logged in or do not need to log in."
+  no-register-needed: "&aYou are already registered or you don't need to register."
+  password-too-short: "&cYour password is too short. It must be at least %length% characters long."
+  password-too-long: "&cYour password is too long. It must be at most %length% characters long."
+  invalid-username: "&cInvalid username characters or length."
+  captcha-wrong: "&cIncorrect Captcha! Code: &a%captcha%&c."
+  pin-generated: "&aYour PIN code is: &e%pin%&a. Please remember it!"
+  reset-password-usage: "&cUsage: /resetpassword [pin] [new password]."
+  no-pin-set: "&cYou have not set a PIN code."
+  invalid-pin: "&cInvalid PIN code."
+  pin-already-generated: "&cYou have already generated a PIN code."
+  debug-usage: "&cUsage: /authdebug [player]."
+  debug:
+    - "&7&m---&r &e&lAuth Debug Info for %player% &7&m---"
+    - "&eUUID: &c%uuid%"
+    - "&ePassword: &c%password%"
+    - "&eLogged In: &c%logged_in%"
+    - "&eIs Premium: &c%premium%"
+    - "&eReset PIN: &c%reset_pin%"
+    - "&eLast Password Change: &c%last_changed%"
+    - "&eLast IP: &c%last_ip%"
+    - "&eIPs: &c%ips%"
+    - "&7&m---&r &e&lAuth Debug Info for %player% &7&m---"
